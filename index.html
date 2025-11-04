@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <style>
         /* This CSS makes the simulation fill the entire browser window */
         html, body {
@@ -21,19 +22,17 @@
 </head>
 <body>
 
-    <iframe id="simulationFrame" src="simulation.html"></iframe>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.9/iframeResizer.contentWindow.min.js"></script>
+    <iframe id="simulationFrame" src="GameOfFitness.html"></iframe>
 
     <script>
-      
+        // This is the JavaScript that does all the work.
         
         var myIframe = document.getElementById('simulationFrame');
 
         // Wait for the iframe to fully load
         myIframe.onload = function() {
             try {
-          
+                // This is the CSS we are going to inject.
                 var css = `
                     .netlogo-header, 
                     .netlogo-tab-area,
