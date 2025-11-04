@@ -21,20 +21,23 @@
 </head>
 <body>
 
-    <iframe id="simulationFrame" src="GameOfFitness.html"></iframe>
+    <iframe id="simulationFrame" src="simulation.html"></iframe>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.9/iframeResizer.contentWindow.min.js"></script>
 
     <script>
       
+        
         var myIframe = document.getElementById('simulationFrame');
 
+        // Wait for the iframe to fully load
         myIframe.onload = function() {
             try {
-               
+          
                 var css = `
                     .netlogo-header, 
-                    .netlogo-tab-area {
+                    .netlogo-tab-area,
+                    .netlogo-display-horizontal {
                         display: none !important;
                     }
                     
@@ -58,7 +61,6 @@
                 iframeHead.appendChild(style);
 
             } catch (e) {
-               
                 console.error("Error applying styles to iframe:", e);
             }
         };
