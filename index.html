@@ -20,8 +20,49 @@
     </style>
 </head>
 <body>
-    
-    <iframe src="GameOfFitness.html?remove-header=true&remove-command-center=true"></iframe>
-    
+
+    <iframe id="simulationFrame" src="GameOfFitness.html"></iframe>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.9/iframeResizer.contentWindow.min.js"></script>
+
+    <script>
+      
+        var myIframe = document.getElementById('simulationFrame');
+
+        myIframe.onload = function() {
+            try {
+               
+                var css = `
+                    .netlogo-header, 
+                    .netlogo-tab-area {
+                        display: none !important;
+                    }
+                    
+                    /* This rule fixes the layout after the header is removed */
+                    .netlogo-display-vertical {
+                        height: 100vh !important;
+                    }
+                `;
+
+                // Get the 'head' section inside the iframe
+                var iframeHead = myIframe.contentDocument.head;
+
+                // Create a new <style> element
+                var style = document.createElement('style');
+
+                // Put our new CSS rules into the <style> element
+                style.type = 'text/css';
+                style.appendChild(document.createTextNode(css));
+
+                // Add our new <style> element to the iframe's head
+                iframeHead.appendChild(style);
+
+            } catch (e) {
+               
+                console.error("Error applying styles to iframe:", e);
+            }
+        };
+    </script>
+
 </body>
 </html>
