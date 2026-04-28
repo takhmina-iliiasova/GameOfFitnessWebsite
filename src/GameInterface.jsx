@@ -478,11 +478,10 @@ export default function GameInterface() {
               <section>
                 <h3 className="text-lg font-bold text-white mb-2">More Information</h3>
                 <p className="text-slate-300 text-sm leading-relaxed mb-3">
-                  This simulation is part of the research paper "<em className="italic">Game of Fitness: Bet-hedging via Kelly betting in a
-limited environment leads to logistic growth</em>" by Fatih Gulec, Takhmina Iliiasova, Nigel Wallbridge, and Andrew W. Eckford.
+                  This simulation is part of the research paper "<em className="italic">Bet-hedging via Kelly betting in a limited environment leads to logistic growth in the Game of Fitness</em>", Scientific Reports, 2026, by Fatih Gulec, Takhmina Iliiasova, Nigel Wallbridge, and Andrew W. Eckford.
                 </p>
                 <a 
-                 href="#" // blank for now
+                 href="https://www.nature.com/articles/s41598-026-47388-8"
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-semibold transition-colors"
